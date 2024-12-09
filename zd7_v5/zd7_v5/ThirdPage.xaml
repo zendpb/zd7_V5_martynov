@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zd7_v5.ThirdPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <!-- Заголовок -->
+            <Label Text="Онлайн-агентство недвижимости (выбор и покупка недвижимости)"
+                   FontAttributes="Italic"
+                   TextColor="Blue"
+                   HorizontalOptions="Center" />
+
+            <!-- Карусель объектов недвижимости -->
+            <CarouselView x:Name="RealEstateCarouselView" IndicatorView="IndicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Image Source="{Binding Photo}" Aspect="AspectFill" HeightRequest="200"/>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="Medium" />
+                            <Label Text="{Binding Price}" FontSize="Small" />
+                            <Label Text="{Binding Rooms}" FontSize="Small" />
+                            <Button Text="Просмотреть информацию"
+                                    Clicked="OnViewDetailsClicked" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView x:Name="IndicatorView" 
+                           Position="0" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="End" 
+                           Margin="0,0,0,10"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

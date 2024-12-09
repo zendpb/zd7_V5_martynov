@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zd7_v5.ModalPage"
+               Title="Расчет стоимости">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <!-- Поля для ввода -->
+            <Entry x:Name="PriceEntry" Placeholder="Введите цену объекта" Keyboard="Numeric" />
+            <Picker x:Name="PaymentTypePicker" Title="Выберите вид оплаты">
+                <Picker.Items>
+                    <x:String>Наличный расчет</x:String>
+                    <x:String>Безналичный расчет</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="PaymentTermEntry" Placeholder="Введите срок оплаты (в днях)" Keyboard="Numeric" />
+
+            <!-- Кнопка расчета -->
+            <Button Text="Рассчитать" Clicked="OnCalculateClicked" />
+
+            <!-- Результат -->
+            <Label x:Name="ResultLabel" Text="Результат будет здесь" HorizontalOptions="Center" />
+
+            <!-- Кнопки -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="На главную" Clicked="OnReturnToRootClicked" />
+                <Button Text="Назад" Clicked="OnReturnToMainPageClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

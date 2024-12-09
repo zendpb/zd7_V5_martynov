@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zd7_v5.MainPage"
+             Title="Информация по объектам недвижимости">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <!-- Картинка вверху -->
+            <Image Source="{Binding Photo}" 
+                   Aspect="AspectFill" 
+                   HeightRequest="200" 
+                   HorizontalOptions="Center" />
+
+            <!-- Заголовок -->
+            <Label Text="Информация по объектам недвижимости (выбор и покупка недвижимости)"
+                   FontAttributes="Bold"
+                   TextColor="Green"
+                   HorizontalOptions="Center" />
+
+            <!-- Таблица с информацией -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Объект недвижимости" Grid.Row="0" Grid.Column="0" />
+                <Label Text="Клиент" Grid.Row="0" Grid.Column="1" />
+                <Label Text="{Binding Name}" Grid.Row="1" Grid.Column="0" />
+                <Label Text="{Binding Price}" Grid.Row="1" Grid.Column="1" />
+                <Label Text="{Binding Rooms}" Grid.Row="2" Grid.Column="0" />
+                <!-- Добавьте остальные поля -->
+            </Grid>
+
+            <!-- Кнопки -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Расчет суммы оплаты" Clicked="OnCalculatePaymentClicked" />
+                <Button Text="Возврат на главную страницу" Clicked="OnReturnToMainPageClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
